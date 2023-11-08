@@ -1,0 +1,143 @@
+{
+  "info": {
+    "_postman_id": "f8ccfc08-f3d5-47e5-bec6-aaf719c77140",
+    "name": "Musala-soft-drones",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "20538697"
+  },
+  "item": [
+    {
+      "name": "register-drone",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"model\":\"LIGHT_WEIGHT\",\r\n\"serialNumber\":\"DR-09\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/dispatcher/drone/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "dispatcher",
+            "drone",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "load-drone",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"codes\": [\"01\"]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/dispatcher/drone/load/DR-01",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "dispatcher",
+            "drone",
+            "load",
+            "DR-01"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "available-for-loading",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/dispatcher/check/drone/available-for-loading",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "dispatcher",
+            "check",
+            "drone",
+            "available-for-loading"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "check-drone",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/dispatcher/check/drone/DR-01",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "dispatcher",
+            "check",
+            "drone",
+            "DR-01"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "check-drone medication",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/dispatcher/check/drone/medication/DR-02",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "dispatcher",
+            "check",
+            "drone",
+            "medication",
+            "DR-02"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

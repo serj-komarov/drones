@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.4'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+
+group 'com.musala'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    //SpringBoot
+    implementation(libs.spring.boot.starter.web)
+    implementation(libs.spring.boot.starter.data.jpa)
+    implementation(libs.spring.boot.starter.validation)
+    implementation(libs.spring.boot.starter.logging)
+    annotationProcessor(libs.spring.boot.configuration.processor)
+
+    //Swagger
+    implementation(libs.springdocstarter)
+
+    //DB
+    implementation(libs.postgres)
+    implementation(libs.liquibase.core)
+    implementation(libs.hibernate.core)
+    implementation(libs.hibernate.types)
+
+    //Others
+    compileOnly(libs.lombok)
+    annotationProcessor(libs.lombok)
+    implementation(libs.jakarta.persistence.api)
+    compileOnly(libs.mapstruct)
+    annotationProcessor(libs.mapstructproc)
+
+    //Test
+    testCompileOnly(libs.lombok)
+    testAnnotationProcessor(libs.lombok)
+    testImplementation(libs.restassured)
+    testImplementation(libs.spring.jdbc)
+    testImplementation(libs.spring.boot.starter.test)
+    testImplementation(libs.testcontainers)
+    testImplementation(libs.testcontainersjunitjupiter)
+    testImplementation(libs.testcontainerspostgresql)
+    testImplementation(libs.junit.jupiter.api)
+    testImplementation(libs.assertj.core)
+}
+
+test {
+    useJUnitPlatform()
+}
